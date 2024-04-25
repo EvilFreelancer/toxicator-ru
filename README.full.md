@@ -1,9 +1,12 @@
 # Toxicator RU - Model Training with TorchTune (full guide)
 
 This project provides detailed instructions for setting up, training, and utilizing a model designed to transform
-neutral sentences on Russian language into their "toxic" counterparts. We utilize the TorchTune framework along with the
-LLaMA 2 7B model, and a custom dataset converted from
-the [RUSSE detox 2022 competition](https://github.com/s-nlp/russe_detox_2022) to the HuggingFace platform.
+neutral sentences on Russian language into their "toxic" counterparts.
+
+It utilize the [TorchTune](https://github.com/pytorch/torchtune) tool along with
+the [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) model, and a custom dataset
+converted from the [RUSSE detox 2022 competition](https://github.com/s-nlp/russe_detox_2022) to the HuggingFace
+platform.
 
 ## Prerequisites
 
@@ -105,8 +108,8 @@ checkpointer:
   _component_: torchtune.utils.FullModelHFCheckpointer
   checkpoint_dir: ./Llama-2-7b-hf/
   checkpoint_files: [
-      hf_model_0001_2.pt,
-      hf_model_0002_2.pt,
+    hf_model_0001_2.pt,
+    hf_model_0002_2.pt,
   ]
   output_dir: ./Llama-2-7b-hf/
   model_type: LLAMA2
@@ -116,6 +119,6 @@ As you can see `checkpoint_files` subsection was changed from defaults.
 
 ## Links
 
-* https://huggingface.co/evilfreelancer/llama2-7b-toxicator-ru - LLaMA 2 7B - Toxicator RU 
+* https://huggingface.co/evilfreelancer/llama2-7b-toxicator-ru - LLaMA 2 7B - Toxicator RU
 * https://huggingface.co/datasets/evilfreelancer/toxicator-ru - dataset
 * https://api.wandb.ai/links/evilfreelancer/33t8pqze - wandb report about training

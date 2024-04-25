@@ -1,9 +1,12 @@
 # Toxicator RU
 
 This project provides detailed instructions for setting up, training, and utilizing a model designed to transform
-neutral sentences on Russian language into their "toxic" counterparts. We utilize the TorchTune framework along with the
-LLaMA 2 7B model, and a custom dataset converted from
-the [RUSSE detox 2022 competition](https://github.com/s-nlp/russe_detox_2022) to the HuggingFace platform.
+neutral sentences on Russian language into their "toxic" counterparts.
+
+It utilize the [TorchTune](https://github.com/pytorch/torchtune) tool along with
+the [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) model, and a custom dataset
+converted from the [RUSSE detox 2022 competition](https://github.com/s-nlp/russe_detox_2022) to the HuggingFace
+platform.
 
 Full guide is [here](./README.full.md).
 
