@@ -1,0 +1,7 @@
+torch~=2.2.2
+torchtune~=0.1.1
+bitsandbytes~=0.43.1
+numpy~=1.26.4
+datasets~=2.19.0
+wandb~=0.16.6
+transformers~=4.40.1

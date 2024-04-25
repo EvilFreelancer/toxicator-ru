@@ -1,0 +1,8 @@
+/.idea/
+/venv/
+/gemma*/
+/llama*/
+/Llama*/
+/lora_finetune_output/
+/wandb/
+/toxicator-ru-hf/

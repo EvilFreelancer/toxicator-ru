@@ -1,0 +1,36 @@
+# Config for running the InferenceRecipe in generate.py to generate output from an LLM
+#
+# To launch, run the following command from root torchtune directory:
+#    tune run generate --config generation
+
+# Model arguments
+model:
+  _component_: torchtune.models.llama2.llama2_7b
+
+checkpointer:
+  _component_: torchtune.utils.FullModelHFCheckpointer
+  checkpoint_dir: ./Llama-2-7b-hf/
+  checkpoint_files: [
+      hf_model_0001_2.pt,
+      hf_model_0002_2.pt,
+  ]
+  output_dir: ./Llama-2-7b-hf/
+  model_type: LLAMA2
+
+device: cuda
+dtype: bf16
+
+seed: 1234
+
+# Tokenizer arguments
+tokenizer:
+  _component_: torchtune.models.llama2.llama2_tokenizer
+  path: ./Llama-2-7b-hf/tokenizer.model
+
+# Generation arguments; defaults taken from gpt-fast
+prompt: "### Instruction:\nПерефразируй нетоксичный текст так, чтобы он стал токсичным, сохраняя при этом исходный смысл, орфографию и пунктуацию.\n\n### Input:\nВеликолепный полёт мысли, сразу видно, что Вы очень талантливы.\n\n### Response:\n"
+max_new_tokens: 300
+temperature: 0.6 # 0.8 and 0.6 are popular values to try
+top_k: 300
+
+quantizer: null
