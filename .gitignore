@@ -6,3 +6,4 @@
 /lora_finetune_output/
 /wandb/
 /toxicator-ru-hf/
+*.csv
